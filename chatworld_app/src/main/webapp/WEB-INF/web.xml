@@ -8,7 +8,7 @@
   <welcome-file-list>
   
   
-    <welcome-file>../JSP/index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
     <!-- 
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -31,4 +31,26 @@
   	<servlet-name>abc</servlet-name>
   	<servlet-class>servlets.Check_user</servlet-class>
   </servlet>
+  
+   <servlet-mapping>
+  	<servlet-name>cde</servlet-name>
+  	<url-pattern>/add_user</url-pattern>
+  </servlet-mapping>
+   
+   <servlet>
+  	<servlet-name>cde</servlet-name>
+  	<servlet-class>servlets.Add_user</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>add_Post</servlet-name>
+  	<url-pattern>/add_post</url-pattern>
+  </servlet-mapping>
+   
+   <servlet>
+  	<servlet-name>add_Post</servlet-name>
+  	<servlet-class>servlets.AddPost</servlet-class>
+  </servlet>
+  
+  
 </web-app>

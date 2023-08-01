@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sign Up | By Code Info</title>
-    <link rel="stylesheet" href="../CSS/styles.css" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
@@ -16,16 +16,17 @@
         <div class="signup-box">
           <h1>Sign Up</h1>
           <h4>It's free and only takes a minute</h4>
-          <form action = "validate.jsp" method = "get">
-            <input type="text" placeholder="First Name" name = "firstName" id = "firstName"/>
-            <input type="text" placeholder="Last Name" name = "lastName" id = "lastName"/>
-            <input type="email" placeholder="Email" name = "emailID" id = "emailID"/>
-            <input type="password" placeholder="Password" name = "password" id = "password" />
-            <input type="password" placeholder="Confirm Password" name = "c_password" id = "c_password" />
+          <form action = "add_user" method = "post" enctype = 'multipart/form-data'>
+            <input type="text" placeholder="First Name" name = "firstName" id = "firstName" required/>
+            <input type="text" placeholder="Last Name" name = "lastName" id = "lastName" required/>
+            <input type="email" placeholder="Email" name = "emailID" id = "emailID" required/>
+            <input type="password" placeholder="Password" name = "password" id = "password" required/>
+            <input type="password" placeholder="Confirm Password" name = "c_password" id = "c_password" required/>
+            <input type = "file" name = "img" id = "img" accept = "image/*">
             <button type = "submit" class = "btnSub">Submit</button>
-          <closeform></closeform></form>
+          </form>
           <p class="para-2">
-            Already have an account? <a href="login.jsp">Login here</a>
+            Already have an account? <a href="index.jsp">Login here</a>
           </p>
         </div>
 
@@ -41,5 +42,4 @@
 
 
   </body>
-  
 </html>

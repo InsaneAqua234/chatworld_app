@@ -108,6 +108,33 @@ header a{
 }
  .exit{
 	float:right;
-
-
 }
+.profile{
+    position: absolute;
+    display: inline-table;
+    left: 3%;
+    top: 10%;
+}
+
+.profile .p_photo{
+
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    background-attachment: fixed;
+    color: black;
+    text-align: center;
+    align-items: center;
+    
+}
+
+img {
+    border-radius: 50%;
+    background-size:cover ;
+    height: 100%;
+    width: 100%;
+}
+.profile .p_name{
+    color: white;
+}
+

@@ -1,3 +1,5 @@
-var datetime = new Date().toLocaleTimeString().replace(/:\d+ /, ' ');
+let pass = document.getElementsByName("password");
+let c_pass = document.getElementsByName("c_pass");
 
-document.getElementById("time").textContent = datetime;
+if(pass == c_pass)
+	alert("Password and Confirm Password incorrect.");

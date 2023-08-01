@@ -17,6 +17,7 @@
 		if(emailID != null || text.equals(null)){
 		
 		*/
+		
 		String emailID = "";
 		String text = request.getParameter("message");
 		Cookie cookies[] = request.getCookies();

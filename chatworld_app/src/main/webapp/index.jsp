@@ -5,7 +5,7 @@
 
 <head>
   <title>ChatWorld</title>
-  <link rel="stylesheet" href="../CSS/styles.css" />
+  <link rel="stylesheet" href="CSS/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -20,11 +20,11 @@
     <div class="right">
       <div class="login-box">
         <h1>Login</h1>
-        <form action = "verify.jsp" method = "get">
+        <form action = "check_user" method = "get" enctype = 'multipart/form-data'>
           <!-- <label>Email</label> -->
-          <input type="email" placeholder="Email" name = "emailID"/>
+          <input type="email" placeholder="Email" name = "emailID" required/>
           <!-- <label>Password</label> -->
-          <input type="password" placeholder="Password" name = "password"/>
+          <input type="password" placeholder="Password" name = "password" required/>
           <button type = "submit" class = "btnSub">Submit</button>
         </form>
         <p class="para-2">

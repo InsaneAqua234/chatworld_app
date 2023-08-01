@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
 import java.sql.*;
 
 import database.Database;
@@ -47,7 +48,6 @@ public class Check_user extends HttpServlet {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "chatApp", "pass");
 			*/
-			
 			ServletContext contx = getServletContext();
 			Database db = (Database) contx.getAttribute("database");
 			
@@ -61,16 +61,19 @@ public class Check_user extends HttpServlet {
 			
 			while(set.next()){
 				if(set.getString(2).equals(emailID) && set.getString(3).equals(password)){
-					RequestDispatcher r = request.getRequestDispatcher("JSP/chat.jsp");
+					RequestDispatcher r = request.getRequestDispatcher("chat.jsp");
 					Cookie cooky = new Cookie("emailID", emailID);
 					response.addCookie(cooky);
+					HttpSession session = request.getSession();
+					session.setAttribute("active", "active");
+					session.setAttribute("image", set.getString(4));
 					//session.setAttribute("emailID", emailID);
 					r.forward(request,response);
 					x = true;
 				}
 			}
 			if(!x) {
-				response.sendRedirect("user_found.jsp");
+				response.sendRedirect("user_not_found.jsp");
 			}
 		}
 		catch(Exception e){
